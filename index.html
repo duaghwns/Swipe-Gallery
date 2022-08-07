@@ -22,26 +22,15 @@
         </ul>
 
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
                 <div class="inner">
+                    <div class="con">
+                        <img src="./img/IMG_0104.JPG">
+                        <h2>pic1</h2>
+                        <p>asdfasdfasdfasdfascontent</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="inner"></div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="inner"></div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="inner"></div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="inner"></div>
-            </div>
+            </div> -->
         </div>
 
         <div class="swiper-button-next"></div>
@@ -50,6 +39,35 @@
         <div class="swiper-pagination"></div>
     </div>
 <script>
+    const insertImage = () => {
+        const swiper = document.querySelector('.swiper-wrapper');
+
+        for(let i=4;i<=11;i++) {
+            if(i>9){
+                console.log(`./img/IMG_01${i}.JPG`)
+                swiper.innerHTML += `<div class="swiper-slide">
+                    <div class="inner">
+                        <div class="con">
+                            <img src="./img/IMG_01${i}.JPG">
+                            <h2>pic${i}</h2>
+                            <p>asdfasdfasdfasdfascontent</p>
+                        </div>
+                    </div>`;
+            } else {
+                console.log(`./img/IMG_010${i}.JPG`)
+                swiper.innerHTML += `<div class="swiper-slide">
+                    <div class="inner">
+                        <div class="con">
+                            <img src="./img/IMG_010${i}.JPG">
+                            <h2>pic0${i}</h2>
+                            <p>일본사진 ${i}번</p>
+                        </div>
+                    </div>`;
+            }
+        }
+    }
+    window.onload = insertImage();
+
     const swiper = new Swiper('.wrap', {
         direction: "horizontal", // 스와이프 방향
         loop: true,
@@ -73,10 +91,26 @@
             depth: 400,     // 원근감 지정
             modifier:1,     // 중첩 정도 지정
             slideShadows: false, // 슬라이드 그림자 지정
+        },
+        autoplay: {
+            delay:1000,
+            disableOnInteraction:true
         }
     });
-    
-    const imgs = FileUtils.getImgs
+
+    const btnStart = document.querySelector('.btnStart');
+    const btnStop = document.querySelector('.btnStop');
+
+    btnStart.addEventListener('click', () => {
+        swiper.autoplay.start();
+    });
+
+    btnStop.addEventListener('click', () => {
+        swiper.autoplay.stop();
+    });
+
+
+
 </script>
 </body>
 </html>
