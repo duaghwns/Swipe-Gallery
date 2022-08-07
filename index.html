@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스와이프 갤러리</title>
+    <title>Swipe Gallery</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -52,11 +52,19 @@
             nextEl : '.swiper-button-next',
             prevEl : '.swiper-button-prev',
         },
-        spaceBetween: 100, // 패널 사이의 간격을 100px로 설정
+        spaceBetween: 0, // 패널 사이의 간격을 100px로 설정
         slidesPerView: "auto", // CSS에 지정한 슬라이더의 크기를 반영
         grabCursor: true, // 스와이프 시 마우스 포인터 모양 변경
         centeredSlides: true, // 슬라이더 패널을 항상 가운데로 정렬
-        speed: 1000 // 슬러이더 이동 속도 지정
+        speed: 1000, // 슬러이더 이동 속도 지정
+        effect:"coverflow", // 이펙트 효과 지정
+        converflowEffect: {
+            rotate: 50,     // 회전 각도 지정
+            stretch: -100,    // 슬라이드 간의 당김 정도 지정
+            depth: 400,     // 원근감 지정
+            modifier:1,     // 중첩 정도 지정
+            slideShadows: false, // 슬라이드 그림자 지정
+        }
     });
     
 </script>
