@@ -31,5 +31,20 @@
 
         </div>
     </div>
+<script>
+    const swiper = new Swiper('.wrap', {
+        direction: "horizontal", // 스와이프 방향
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination' // 페이지 메뉴 요소명
+        },
+        navigation : {
+            nextEl : '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        spaceBetween: 100 // 패널 사이의 간격을 50px로 설정
+    });
+    
+</script>
 </body>
 </html>
